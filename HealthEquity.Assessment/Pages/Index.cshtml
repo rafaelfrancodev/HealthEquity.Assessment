@@ -1,10 +1,30 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Car Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Guess the Price</h1>
+    @if (Model.Car == null)
+    {
+            <p>No car data found.</p>
+    }
+    else
+    {
+            <div>
+                <h2>@Model.Car.Make @Model.Car.Model</h2>
+                <p>Year: @Model.Car.Year</p>
+                <p>Doors: @Model.Car.Doors</p>
+                <p>Color: @Model.Car.Color</p>
+                <form method="post">
+                    <input type="hidden" asp-for="Car.Id" />
+                    <p>Your Guess: <input type="number" min="0" step="100" asp-for="Guess" /> <button type="submit" asp-page-handler="SubmitGuess">Submit</button></p>
+                </form>
+            @if (Model.Result != null)
+            {
+                        <p style="color: @Model.Result.Color">@Model.Result.Message</p>
+            }
+            </div>
+    }
 </div>
