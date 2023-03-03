@@ -4,6 +4,6 @@ namespace Application.UseCases.Interfaces
 {
     public interface IDisplayCarGuessResultUseCase
     {
-        GuessResult Execute(int guess, double price);
+        GuessResult Execute(double guess, double price);
     }
 }

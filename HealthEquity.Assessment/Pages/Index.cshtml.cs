@@ -12,7 +12,6 @@ namespace HealthEquity.Assessment.Pages
         private readonly ICarService _carService;
         private readonly IDisplayCarGuessResultUseCase _displayCarGuessResultUse;
         public Car Car { get; set; }
-        public int Guess { get; set; }
         public GuessResult Result { get; set; }
 
         public IndexModel(ICarService carService, IDisplayCarGuessResultUseCase displayCarGuessResultUse)
@@ -27,7 +26,10 @@ namespace HealthEquity.Assessment.Pages
 
         public void OnPost()
         {
-            Result = _displayCarGuessResultUse.Execute(Guess, Car.Price);
+
+            var guess = Request.Form["Guess"];
+            double.TryParse(guess, out var inputValue);
+            Result = _displayCarGuessResultUse.Execute(inputValue, Car.Price);
         }
     }
 }

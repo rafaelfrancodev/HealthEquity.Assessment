@@ -19,7 +19,7 @@
                 <p>Color: @Model.Car.Color</p>
                 <form method="post">
                     <input type="hidden" asp-for="Car.Id" />
-                    <p>Your Guess: <input type="number" min="0" step="100" asp-for="Guess" /> <button type="submit" asp-page-handler="SubmitGuess">Submit</button></p>
+                    <p>Your Guess: <input type="number" min="0" name="Guess"/> <button type="submit" asp-page-handler="SubmitGuess">Submit</button></p>
                 </form>
             @if (Model.Result != null)
             {

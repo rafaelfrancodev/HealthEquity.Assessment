@@ -5,7 +5,7 @@ namespace Application.UseCases
 {
     public class DisplayCarGuessResultUseCase : IDisplayCarGuessResultUseCase
     {
-        public GuessResult Execute(int guess, double price)
+        public GuessResult Execute(double guess, double price)
         {
             var calc = (double)guess - price;
             int difference = (int)Math.Abs(calc);
