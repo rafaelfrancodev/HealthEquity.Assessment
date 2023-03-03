@@ -15,6 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6C3C8BCE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTests", "Tests\UniTests\UniTests.csproj", "{7FFC98AC-F01F-4311-81AB-5D2AB54EDBD1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{277D559F-ED41-4CE2-9DDC-AE491752C6BC}"
+	ProjectSection(SolutionItems) = preProject
+		get-customers.sql = get-customers.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
